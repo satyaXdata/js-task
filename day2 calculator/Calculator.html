@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width:60vw;
+            height:auto;
+            background-color:rgb(249, 199, 174);
+            border:4px solid rgb(118, 116, 116);
+            border-radius:10px;
+            box-shadow: 5px 5px 10px 1px rgb(118, 116, 116);
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            margin:10px 20px;
+            padding-bottom: 50px;
+            gap:10px;
+        }
+        button{
+            background-color:rgb(190, 226, 248);
+            box-shadow: 10px 10px 10px 1px rgb(118, 116, 116);
+        }
+        .con-feild{
+            display:flex;
+            flex-direction:column;
+            justify-content:space-between;
+            width:50%;
+            gap:10px;
+        }
+        .con-oper{
+            display:flex;
+            justify-content:space-around;
+            width:50%;
+            gap:10px;
+        }
+        button{
+            width:100px;
+            padding:8px 10px;
+            border-radius:10px;
+            border:none
+        }
+        button:hover{
+            background-color:rgb(120, 198, 247);
+            box-shadow: 10px 10px 10px 1px rgb(118, 116, 116);
+        } 
+        input{
+            padding-right:0px;
+
+        }
+    </style>
+    <script>
+        function Add(){
+            var num1=parseInt(document.getElementById("n1").value)
+            var num2=parseInt(document.getElementById("n2").value)
+            var sum=num1+num2
+            document.getElementById("res").value=sum
+        }
+        function Mul(){
+            var num1=parseInt(document.getElementById("n1").value)
+            var num2=parseInt(document.getElementById("n2").value)
+            var Mul=num1*num2
+            document.getElementById("res").value=Mul
+        }
+        function div(){
+            var num1=parseInt(document.getElementById("n1").value)
+            var num2=parseInt(document.getElementById("n2").value)
+            var Div=num1/num2
+            document.getElementById("res").value=Div
+        }
+        function Mod(){
+            var num1=parseInt(document.getElementById("n1").value)
+            var num2=parseInt(document.getElementById("n2").value)
+            var mod=num1%num2
+            document.getElementById("res").value=mod
+        }
+        function sub(){
+            var num1=parseInt(document.getElementById("n1").value)
+            var num2=parseInt(document.getElementById("n2").value)
+            var sub=num1-num2
+            document.getElementById("res").value=sub
+        }
+        function exp(){
+            var num1=parseInt(document.getElementById("n1").value)
+            var num2=parseInt(document.getElementById("n2").value)
+            var exp=num1**num2
+            document.getElementById("res").value=exp
+        }
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculator</h1>
+        <div class="con-feild">
+            <label for="">Enter the first number :</label>
+            <input type="text" id="n1"><br>
+        </div>
+        <div class="con-feild">
+            <label for="">Enter the Second number : </label>
+            <input type="text" id="n2"><br>
+        </div>
+        <div class="con-feild">
+            <label>Result : </label>
+            <input type="text" id="res" readonly><br></div>
+        <div class="con-oper">
+            <button onclick="Add()">Add</button>
+            <button onclick="sub()">Subtract</button>
+        </div>
+        <div class="con-oper">
+            <button onclick="Mul()">Multiply</button>
+            <button onclick="div()">Division</button>
+        </div>
+        <div class="con-oper">
+            <button onclick="Mod()">Modulus</button>
+            <button onclick="exp()">Exponent</button>
+        </div>
+    </div>
+
+
+</body>
+</html>
