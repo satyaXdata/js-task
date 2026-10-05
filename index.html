@@ -3,104 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>JavaScript Tasks</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px 25px;
+            background: #1f2937;
+            color: white;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+            font-size: 32px;
+        }
+
+        header p {
+            margin: 0;
+            color: #d1d5db;
+        }
+
+        .container {
+            width: min(900px, 92%);
+            margin: 30px auto 50px;
+        }
+
+        .tasks {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .task {
+            width: min(650px, 100%);
+            background: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .task:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+        }
+
+        .task h2 {
+            margin: 0 0 8px;
+            font-size: 18px;
+        }
+
+        .task p {
+            margin: 0 0 16px;
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        .task a {
+            display: inline-block;
+            padding: 9px 14px;
+            border-radius: 7px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .task a:hover {
+            background: #1d4ed8;
+        }
+
+    </style>
 </head>
 <body>
-    <h1>Adding two Numbers</h1>
-    <label for="">Enter number 1 :</label>
-    <input type="text" placeholder="num1" id="num1"><br>
-    <label for="">Enter number 2 :</label>
-    <input type="text" placeholder="num2" id="num2"><br>
-    <label for="">Result :</label>
-    <input type="text" placeholder="Result" id="res" readonly><br>
-    <button onclick="addtwo()">ADD</button>
-    <br><hr>
-    <h1>Average of Three Numbers</h1>
-    <label for="">Enter number 1 :</label>
-    <input type="text" placeholder="num1" id="aNum1"><br>
-    <label for="">Enter number 2 :</label>
-    <input type="text" placeholder="num2" id="aNum2"><br>
-    <label for="">Enter number 3 :</label>
-    <input type="text" placeholder="num3" id="aNum3"><br>
-    <label for="">Result :</label>
-    <input type="text" placeholder="Result" id="aRes" readonly><br>
-    <button onclick="avg()">AVERAGE</button>
-    <br><br><hr>
-    <h1>Sum and Average of first N natural numbers</h1>
-    <label for="">Enter the N number :</label>
-    <input type="text" id="sNum"><br>
-    <label for="">Result :</label>
-    <input type="text" id="sRes"><br>
-    <button onclick="sumN()">Sum of N</button>
-    <button onclick="avgN()">Avg of N</button><br>
-    <br><hr>
-    <h1>Missing Angle in triangle when two angles are given</h1>
-    <label for="">Enter the one side angle : </label>
-    <input type="text" placeholder="Enter first angle" id="angle1"><br>
-    <label for="">Enter the another angle : </label>
-    <input type="text" placeholder="Enter second angle" id="angle2"><br>
-    <label for="">Result :</label>
-    <input type="text" readonly placeholder="Result" id="maRes"><br>
-    <button onclick="missAngle()">Result</button>
-    <hr>
-    <br><br><br>
-    <h1>Profit percentage from Selling price and cost price</h1>
-    <label for="">Enter the Selling price : </label>
-    <input type="text" placeholder="Selling price" id="sellPri"><br>
-    <label for="">Enter the Cost price : </label>
-    <input type="text" placeholder="cost price" id="costPri"><br>
-    <label for="">Profit percentage : </label>
-    <input type="text" placeholder="profit" id="profit" readonly><br>
-    <button onclick="profit()">Profit</button>
-    <br><br><br><hr>
-    <h1>simple intrest</h1>
-    <label for="">Enter the price : </label>
-    <input type="text" placeholder="price" id="price"><br>
-    <label for="">Enter the Tenure : </label>
-    <input type="text" placeholder="Tenure" id="tenure"><br>
-    <label for="">Enter the rate of interest : </label>
-    <input type="text" placeholder="Interest" id="rate"><br>
-    <label for="">Result : </label>
-    <input type="text" readonly placeholder="Interest" id="interest"><br>
-    <button onclick="simple()">SimpleInterest</button>
-    <br><br><br><hr>
-    <!-- program for gross salary -->
-    <h1> gross salary and InHand Salary</h1>
-    <label for="">Enter your Basic salary:</label>
-    <input type="text" placeholder="Basic salary" id="basicSalary"><br>
-    <label for="">Enter Bonus percentage:</label>
-    <input type="text" placeholder="Bonus %" id="Bonus_per"><br>
-    <label for="">Enter the Incentive Percentage:</label>
-    <input type="text" placeholder="Incentive %" id="incentive_per"><br>
-    <label for="">Enter pf Percentage:</label>
-    <input type="text" id="pf_per" placeholder="PF %"><br>
-    <label for="">Enter Health Insurance</label>
-    <input type="text" id="health_per" placeholder="Health Insurance"><br>
-    <label for="">Salary:</label>
-    <input type="text" placeholder="Result" id="salary"><br>
-    <button onclick="GrossSalary()">Gross Salary</button><button onclick="Inhand()">InHand Salary</button>
-    <br><br><br><hr>
-    <h1>finding the last digit and removing last digit</h1>
-    <label for="">Enter a number: </label>
-    <input type="text" id="number" placeholder="Number"><br>
-    <label for="">Result : </label>
-    <input type="text" id="r_result"><br>
-    <button onclick="lastdigit()">last digit</button><button onclick="removelastdigit()">remove last digit</button><br><br><br><hr>
-    <script type="text/javascript" src="basicLogicEx.js"></script>
-    <h1>swapping numbers 2 variables</h1>
-    <h3>Before swapping</h3>
-    <label for="">Enter the first digit: </label>
-    <input type="text" id="num1"><br>
-    <label for="">Enter the second digit :</label>
-    <input type="text" id="num2"><br>
-    <h3>After Swapping</h3>
-    <label for="">first digit:</label>
-    <input type="text" readonly id="dnum1"><br>
-    <label for="">second digit</label>
-    <input type="text" readonly id="dnum2"><br>
-    <button onclick="swaptwo()">with 2 variables</button><button onclick="swapwiththree(
-        
-    )">with 3 variables</button>
-    <label for=""></label>
+
+<header>
+    <h1>JavaScript Tasks</h1>
+</header>
+
+<main class="container">
+    <div class="tasks">
+
+        <div class="task">
+            <h2>Day 1 - Basic Logic</h2>
+            <p>Basic JavaScript logic exercises</p>
+            <a href="day1 basiclogic/basicLogic.html">Open Task</a>
+        </div>
+
+        <div class="task">
+            <h2>Day 2 - Calculator</h2>
+            <p>JavaScript calculator task</p>
+            <a href="day2 calculator/Calculator.html">Open Task</a>
+        </div>
+
+        <div class="task">
+            <h2>Day 3 - If Else</h2>
+            <p>If-else statement exercises</p>
+            <a href="day3 if_else/task_if_js.js">View JavaScript</a>
+        </div>
+
+        <div class="task">
+            <h2>Day 4 - For Loop</h2>
+            <p>For loop exercises</p>
+            <a href="day4 for loop/forloopTask.js">View JavaScript</a>
+        </div>
+
+        <div class="task">
+            <h2>Day 5 - Nested For Loop</h2>
+            <p>Nested loop exercises</p>
+            <a href="day5 nested for/forNestedLooptask1.js">View JavaScript</a>
+        </div>
+
+        <div class="task">
+            <h2>Day 6 - While Loop</h2>
+            <p>While loop exercises</p>
+            <a href="day6 whileloop/whilelooptask.js">View JavaScript</a>
+        </div>
+
+        <div class="task">
+            <h2>Day 7 - While Loop 2</h2>
+            <p>Additional while loop exercises</p>
+            <a href="day7 while loop 2/whileTask.js">View JavaScript</a>
+        </div>
+
+        <div class="task">
+            <h2>Day 8 - Number Patterns</h2>
+            <p>Number pattern exercises</p>
+            <a href="day8 num patterns/parternsnumintro.html">Open Task</a>
+        </div>
+
+        <div class="task">
+            <h2>Day 9 - Single Line Patterns</h2>
+            <p>Single-line pattern exercises</p>
+            <a href="day9 single line patterns/singleLinePatterns.html">Open Task</a>
+        </div>
+
+        <div class="task">
+            <h2>Day 10 - Switch Case</h2>
+            <p>Switch-case exercises</p>
+            <a href="day10 switch/switchCaseTaskOp.js">View JavaScript</a>
+        </div>
+
+        <div class="task">
+            <h2>Day 11 - Named Functions</h2>
+            <p>Named function exercises</p>
+            <a href="day11 named fun/namedFunctions.js">View JavaScript</a>
+        </div>
+
+        <div class="task">
+            <h2>Day 12 - Anonymous Functions</h2>
+            <p>Anonymous function exercises</p>
+            <a href="day12 Ano Fun/AnnoFunction.js">View JavaScript</a>
+        </div>
+
+        <div class="task">
+            <h2>Day 13 - Arrow Functions</h2>
+            <p>Arrow function exercises</p>
+            <a href="day13 arrow fun/ArrowFunction.js">View JavaScript</a>
+        </div>
+
+        <div class="task">
+            <h2>Day 14 - Object CRUD</h2>
+            <p>Object CRUD operations</p>
+            <a href="day14 object/task1.js">View JavaScript</a>
+        </div>
+
+        <div class="task">
+            <h2>Day 15 - Nested Object</h2>
+            <p>Nested object exercises</p>
+            <a href="day15 object 2/task2.js">View JavaScript</a>
+        </div>
+
+        <div class="task">
+            <h2>Day 16 - Instance & Static</h2>
+            <p>Instance and static members</p>
+            <a href="day16 static-intsance/static-instancetask.js">View JavaScript</a>
+        </div>
+
+        <div class="task">
+            <h2>Day 17 - Methods</h2>
+            <p>JavaScript methods exercises</p>
+            <a href="day17 methods/methods.js">View JavaScript</a>
+        </div>
+
+        <div class="task">
+            <h2>Day 18 - Constructor</h2>
+            <p>Constructor exercises</p>
+            <a href="day18 constructor/constructor.js">View JavaScript</a>
+        </div>
+
+        <div class="task">
+            <h2>Day 19 - Constructor 2</h2>
+            <p>Additional constructor exercises</p>
+            <a href="day19 constructor 2/conTask2.js">View JavaScript</a>
+        </div>
+
+        <div class="task">
+            <h2>Day 20 - Single Inheritance</h2>
+            <p>Single inheritance exercises</p>
+            <a href="day20 single inheritance/single_inheritance.js">View JavaScript</a>
+        </div>
+
+        <div class="task">
+            <h2>Day 21 - Hierarchical Inheritance</h2>
+            <p>Hierarchical inheritance exercises</p>
+            <a href="day21 Heirachial Inheritance/heirachialInheritace.js">View JavaScript</a>
+        </div>
+
+    </div>
+</main>
 </body>
 </html>
